@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+#define ll long long
+#define lli long long int
+#define vi vector<int>
+#define vll vector<ll>
+#define vii vector<vector<int>>
+#define pb(x) push_back(x)
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define srt(v) sort(begin(v),end(v));
+#define srtr(v) sort(rbegin(v),rend(v))
+#define rev(v) reverse(begin(v),end(v))
+#define pi pair<int,int>
+#define rt(v) return v
+#define sz(v) size(v)
+#define mpdebug(mp) for(auto it:mp){cout<<it.first<<" "<<it.second.size()<<endl;}
+#define debug(v) for(auto it:v) cout<<it<<" ";
+#define speed ios_base::sync_with_stdio(false); cin.tie(NULL);
+
+vector<vector<long long int>> printPascal(int n) 
+{
+  // Write your code here.
+  vector<vector<lli>> dp;
+  rep(i,0,n){
+    vector<lli> temp(i+1,1);
+    rep(j,1,i) temp[j]=dp[i-1][j]+dp[i-1][j-1];
+    dp.pb(temp);
+  }
+  rt(dp);
+}
