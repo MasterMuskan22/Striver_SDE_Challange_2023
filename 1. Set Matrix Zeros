@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+
+#define ll long long
+#define vi vector<int>
+#define vll vector<ll>
+#define vii vector<vector<int>>
+#define pb(x) push_back(x)
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define srt(v) sort(begin(v),end(v));
+#define srtr(v) sort(rbegin(v),rend(v))
+#define rev(v) reverse(begin(v),end(v))
+#define pi pair<int,int>
+#define rt(v) return v
+#define sz(v) size(v)
+#define mpdebug(mp) for(auto it:mp){cout<<it.first<<" "<<it.second.size()<<endl;}
+#define debug(v) for(auto it:v) cout<<it<<" ";
+#define speed ios_base::sync_with_stdio(false); cin.tie(NULL);
+
+void setZeros(vector<vector<int>> &matrix)
+{
+	// Write your code here.
+	int m=(matrix).size();
+	int n=(matrix[0]).size();
+	vii arr(m,vi(n,1));
+	rep(i,0,m){
+		rep(j,0,n){
+			if(matrix[i][j]==0){
+				rep(a,0,n) arr[i][a]=0;
+				rep(a,0,m) arr[a][j]=0;
+			}
+		}
+	}
+	rep(i,0,m){
+		rep(j,0,n){
+			if(arr[i][j]==0) matrix[i][j]=0;
+		}
+	}
+}
